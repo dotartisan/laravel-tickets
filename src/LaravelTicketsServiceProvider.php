@@ -101,7 +101,7 @@ class LaravelTicketsServiceProvider extends ServiceProvider
          */
         Router::macro('categories', function ($controller) {
             Route::middleware(config('laravel-tickets.guard'))->name('laravel-tickets.')->group(function () use ($controller) {
-                Route::prefix('/categories')->group(function () use ($controller) {
+                Route::prefix('/ticket-categories')->group(function () use ($controller) {
                     Route::get('/', [$controller, 'index'])->name('categories.index');
                     Route::post('/', [$controller, 'store'])->name('categories.store');
                     Route::get('/create', [$controller, 'create'])->name('categories.create');
